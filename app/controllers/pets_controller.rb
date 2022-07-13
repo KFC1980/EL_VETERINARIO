@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: %i[ show edit update destroy ]
+  # before_action :set_pet_histories, only: %i[new]
 
   # GET /pets or /pets.json
   def index
@@ -67,4 +68,9 @@ class PetsController < ApplicationController
     def pet_params
       params.require(:pet).permit(:name, :breed, :birth)
     end
+
+    # def pet_histories
+    #   @pet_histories = pet_histories.pluck(:name, :id)
+    # end
+
 end
